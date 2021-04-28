@@ -20,6 +20,9 @@
       ],
       "@dashasorg/employee-app/feature-auth": [
         "libs/employee-app/feature-auth/src/index.ts"
+      ],
+      "@dashasorg/employee-app/ui-auth": [
+        "libs/employee-app/ui-auth/src/index.ts"
       ]
     }
   },

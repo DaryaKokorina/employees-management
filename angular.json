@@ -195,6 +195,31 @@
           }
         }
       }
+    },
+    "employee-app-ui-auth": {
+      "projectType": "library",
+      "root": "libs/employee-app/ui-auth",
+      "sourceRoot": "libs/employee-app/ui-auth/src",
+      "prefix": "dashasorg",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/employee-app/ui-auth/src/**/*.ts",
+              "libs/employee-app/ui-auth/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/employee-app/ui-auth"],
+          "options": {
+            "jestConfig": "libs/employee-app/ui-auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
