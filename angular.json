@@ -145,6 +145,31 @@
           }
         }
       }
+    },
+    "employee-app-feature-employees-shell": {
+      "projectType": "library",
+      "root": "libs/employee-app/feature-employees-shell",
+      "sourceRoot": "libs/employee-app/feature-employees-shell/src",
+      "prefix": "dashasorg",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/employee-app/feature-employees-shell/src/**/*.ts",
+              "libs/employee-app/feature-employees-shell/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/employee-app/feature-employees-shell"],
+          "options": {
+            "jestConfig": "libs/employee-app/feature-employees-shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
