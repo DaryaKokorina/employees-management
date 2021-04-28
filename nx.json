@@ -17,6 +17,7 @@
       "tags": [],
       "implicitDependencies": ["emloyees-management"]
     },
-    "employee-app-feature-employees-shell": { "tags": [] }
+    "employee-app-feature-employees-shell": { "tags": [] },
+    "employee-app-feature-auth": { "tags": [] }
   }
 }

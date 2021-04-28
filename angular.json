@@ -170,6 +170,31 @@
           }
         }
       }
+    },
+    "employee-app-feature-auth": {
+      "projectType": "library",
+      "root": "libs/employee-app/feature-auth",
+      "sourceRoot": "libs/employee-app/feature-auth/src",
+      "prefix": "dashasorg",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/employee-app/feature-auth/src/**/*.ts",
+              "libs/employee-app/feature-auth/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/employee-app/feature-auth"],
+          "options": {
+            "jestConfig": "libs/employee-app/feature-auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

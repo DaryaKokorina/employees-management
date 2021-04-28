@@ -17,6 +17,9 @@
     "paths": {
       "@dashasorg/employee-app/feature-employees-shell": [
         "libs/employee-app/feature-employees-shell/src/index.ts"
+      ],
+      "@dashasorg/employee-app/feature-auth": [
+        "libs/employee-app/feature-auth/src/index.ts"
       ]
     }
   },
