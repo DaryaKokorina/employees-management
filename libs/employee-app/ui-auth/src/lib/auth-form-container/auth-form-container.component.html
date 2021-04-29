@@ -1,1 +1,29 @@
-<p>Auth form works!</p>
+<h3>Login</h3>
+<div>
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <div class="spacer">
+      <label for="email">Email</label>
+      <input
+        type="text"
+        placeholder="Email"
+        [(ngModel)]="loginData.email"
+        id="email"
+        name="email"
+      />
+    </div>
+    <div class="spacer">
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        placeholder="password"
+        [(ngModel)]="loginData.password"
+        class="form-control"
+        name="password"
+      />
+    </div>
+    <div class="spacer">
+      <button type="submit">Login</button>
+    </div>
+  </form>
+</div>
