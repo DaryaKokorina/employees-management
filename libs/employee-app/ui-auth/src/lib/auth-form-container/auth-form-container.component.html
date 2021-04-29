@@ -1,7 +1,6 @@
-<h3>Login</h3>
-<div>
-  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-    <div class="spacer">
+<div class="emp-auth-form-container">
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="emp-auth-form">
+    <div class="emp-auth-form-item">
       <label for="email">Email</label>
       <input
         type="text"
@@ -11,7 +10,7 @@
         name="email"
       />
     </div>
-    <div class="spacer">
+    <div class="emp-auth-form-item">
       <label for="password">Password</label>
       <input
         id="password"
@@ -22,7 +21,7 @@
         name="password"
       />
     </div>
-    <div class="spacer">
+    <div class="emp-auth-form-item">
       <button type="submit">Login</button>
     </div>
   </form>
