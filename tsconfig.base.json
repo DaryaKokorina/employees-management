@@ -23,6 +23,9 @@
       ],
       "@dashasorg/employee-app/ui-auth": [
         "libs/employee-app/ui-auth/src/index.ts"
+      ],
+      "@dashasorg/employee-app/models": [
+        "libs/employee-app/models/src/index.ts"
       ]
     }
   },
