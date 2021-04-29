@@ -1,2 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~normalize.css';
+
+:root {
+  --midnight-blue-color: #013065;
+  --lochmara-color: #037ec4;
+  --white-color: #ffffff;
+}
+
+html {
+  font-size: 16px;
+}
+
+h1 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
