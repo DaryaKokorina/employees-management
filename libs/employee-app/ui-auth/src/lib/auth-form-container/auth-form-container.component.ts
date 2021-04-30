@@ -7,7 +7,7 @@ import { LoginData } from '@dashasorg/employee-app/models';
   styleUrls: ['./auth-form-container.component.css']
 })
 export class AuthFormContainerComponent {
-  @Output() submitLoginData = new EventEmitter<LoginData>();
+  @Output() passLoginData = new EventEmitter<LoginData>();
 
   formControlPlaceholder = 'Enter here';
   loginData: LoginData = {
@@ -16,7 +16,6 @@ export class AuthFormContainerComponent {
   };
 
   onSubmit() {
-    console.log('new login data', this.loginData);
-    this.submitLoginData.emit(this.loginData);
+    this.passLoginData.emit(this.loginData);
   }
 }
