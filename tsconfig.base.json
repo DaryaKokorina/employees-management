@@ -26,6 +26,9 @@
       ],
       "@dashasorg/employee-app/models": [
         "libs/employee-app/models/src/index.ts"
+      ],
+      "@dashasorg/employee-app/feature-employees-list": [
+        "libs/employee-app/feature-employees-list/src/index.ts"
       ]
     }
   },
