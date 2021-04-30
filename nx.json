@@ -21,6 +21,7 @@
     "employee-app-feature-auth": { "tags": [] },
     "employee-app-ui-auth": { "tags": [] },
     "employee-app-models": { "tags": [] },
-    "employee-app-feature-employees-list": { "tags": [] }
+    "employee-app-feature-employees-list": { "tags": [] },
+    "employee-app-ui-employees-list": { "tags": [] }
   }
 }

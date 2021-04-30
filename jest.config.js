@@ -6,5 +6,6 @@ module.exports = {
     '<rootDir>/libs/employee-app/ui-auth',
     '<rootDir>/libs/employee-app/models',
     '<rootDir>/libs/employee-app/feature-employees-list',
+    '<rootDir>/libs/employee-app/ui-employees-list',
   ],
 };

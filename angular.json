@@ -270,6 +270,31 @@
           }
         }
       }
+    },
+    "employee-app-ui-employees-list": {
+      "projectType": "library",
+      "root": "libs/employee-app/ui-employees-list",
+      "sourceRoot": "libs/employee-app/ui-employees-list/src",
+      "prefix": "dashasorg",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/employee-app/ui-employees-list/src/**/*.ts",
+              "libs/employee-app/ui-employees-list/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/employee-app/ui-employees-list"],
+          "options": {
+            "jestConfig": "libs/employee-app/ui-employees-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
