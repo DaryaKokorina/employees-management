@@ -8,7 +8,8 @@ import { LoginData } from '@dashasorg/employee-app/models';
 })
 export class AuthFormContainerComponent {
   @Output() submitLoginData = new EventEmitter<LoginData>();
-  
+
+  formControlPlaceholder = 'Enter here';
   loginData: LoginData = {
     email: '',
     password: ''

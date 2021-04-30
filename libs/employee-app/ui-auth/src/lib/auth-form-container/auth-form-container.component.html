@@ -4,7 +4,7 @@
       <label for="email">Email</label>
       <input
         type="text"
-        placeholder="Email"
+        placeholder="{{ formControlPlaceholder }}"
         [(ngModel)]="loginData.email"
         id="email"
         name="email"
@@ -15,9 +15,8 @@
       <input
         id="password"
         type="password"
-        placeholder="password"
+        placeholder="{{ formControlPlaceholder }}"
         [(ngModel)]="loginData.password"
-        class="form-control"
         name="password"
       />
     </div>

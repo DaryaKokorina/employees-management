@@ -1,5 +1,10 @@
 :host {
   --background-color: var(--white-color);
+  --label-color: var(--santas-grey-color);
+  --input-border-color: var(--athens-gray);
+  --input-color: var(--tuna-color);
+  --button-color: var(--lochmara-color);
+  --button-text-color: var(--white-color);
 }
 
 .emp-auth-form-container {
@@ -21,4 +26,34 @@
   flex-direction: column;
   justify-content: space-between;
   margin: 0 1.5rem;
+}
+
+.emp-auth-form-item label {
+  margin-bottom: 0.44rem;
+  font-size: 0.75rem;
+  color: var(--label-color);
+}
+
+.emp-auth-form-item input,
+.emp-auth-form-item button {
+  height: 38px;
+}
+
+.emp-auth-form-item input {
+  padding: 0 0.625rem 0 1rem;
+  border: 1px solid var(--input-border-color);
+  border-radius: 4px;
+
+  color: var(--tuna-color);
+  opacity: 0.5;
+}
+
+.emp-auth-form-item button {
+  border: none;
+  border-radius: 4px;
+
+  font-size: 0.875rem;
+
+  color: var(--button-text-color);
+  background-color: var(--button-color);
 }
