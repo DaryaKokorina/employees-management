@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
-import { LoginComponent } from '@dashasorg/employee-app/feature-auth';
 
 
 export const empFeatureEmployeesShellRoutes: Route[] = [
   {
     path: '',
-    component: LoginComponent
+    loadChildren: () => import('@dashasorg/employee-app/feature-employees-list').then(m => m.EmployeeAppFeatureEmployeesListModule)
   }
 ];
 
@@ -16,5 +15,6 @@ export const empFeatureEmployeesShellRoutes: Route[] = [
     CommonModule,
     RouterModule.forChild(empFeatureEmployeesShellRoutes)
   ],
+  exports: [RouterModule]
 })
 export class EmployeeAppFeatureEmployeesShellModule {}
