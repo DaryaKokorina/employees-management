@@ -1,15 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import '~normalize.css';
-
-:root {
-  --midnight-blue-color: #013065;
-  --lochmara-color: #037ec4;
-  --white-color: #ffffff;
-  --santas-grey-color: #9ea0a5;
-  --athens-gray: #e2e5ed;
-  --tuna-color: #3e3f42;
-}
+@import './styles/palette.css';
 
 html {
   font-size: 16px;
