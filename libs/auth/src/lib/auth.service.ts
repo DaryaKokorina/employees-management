@@ -15,7 +15,6 @@ export class AuthService {
   ) {
     /* Saving user data in localstorage during first load */
     this.afAuth.authState.pipe(take(1)).subscribe(user => {
-      console.log('auth Service constructor', user);
       if (user) {
         localStorage.setItem('user', JSON.stringify(user));
       } else {
@@ -32,7 +31,6 @@ export class AuthService {
         this.ngZone.run(() => {
           this.router.navigate(['/'])
         });
-        console.log('auth Service login', result.user);
       }).catch((err) => {
         window.alert(err.message);
       });

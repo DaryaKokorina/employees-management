@@ -11,7 +11,6 @@ export class LoginComponent {
   constructor(private authService: AuthService) {}
 
   login(data: LoginData) {
-    console.log('feature-auth', data);
     this.authService.login(data.email, data.password);
   }
 }
