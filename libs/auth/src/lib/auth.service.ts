@@ -13,11 +13,10 @@ export class AuthService {
   ) {}
 
   // Sign in with email/password
-  login(email: string, password: string) {
+  login(email: string, password: string): Promise<string | void> {
     return this.afAuth.signInWithEmailAndPassword(email, password)
-      .then(() => {
-        this.router.navigate(['/']);
-      }).catch((err) => {
+      .then((res) => res.user.uid)
+      .catch((err) => {
         console.log('Something went wrong: ', err.message);
       });
   }
@@ -29,9 +28,7 @@ export class AuthService {
     );
   }
 
-  logout() {
-    return this.afAuth.signOut().then(() => {
-      this.router.navigate(['login']);
-    });
+  logout(): Promise<void> {
+    return this.afAuth.signOut();
   }
 }
