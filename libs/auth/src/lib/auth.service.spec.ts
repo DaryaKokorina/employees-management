@@ -1,6 +1,5 @@
 import { async, TestBed } from '@angular/core/testing';
 import { AngularFireAuth } from "@angular/fire/auth";
-import { Router } from "@angular/router";
 import { RouterTestingModule } from '@angular/router/testing';
 import { BehaviorSubject } from 'rxjs';
 import { AuthService } from './auth.service';
@@ -8,33 +7,32 @@ import { AuthService } from './auth.service';
 describe('AuthService', () => {
   let service: AuthService;
   let afAuth: AngularFireAuth;
-  let router: Router;
 
   const credentialsMock = {
     email: 'abc@123.com',
     password: 'password'
   };
 
-  const userMock = {
-    uid: 'ABC123',
-    email: credentialsMock.email
+  const resDataMock = {
+    user: {
+      uid: 'ABC123',
+      email: credentialsMock.email
+    }
   };
 
   const fakeAuthState = new BehaviorSubject(null);
 
   const fakeLoginHandler = (email: string, password: string): Promise<any> => {
-    fakeAuthState.next(userMock);
-    router.navigate(['/']);
+    fakeAuthState.next(resDataMock.user);
     return new Promise((resolve, reject) => {
       email === credentialsMock.email ?
-        resolve(userMock) :
+        resolve(resDataMock) :
         reject(new Error('Error occurs during user login!'));
     });
   };
 
   const fakeLogoutHandler = (): Promise<any> => {
     fakeAuthState.next(null);
-    router.navigate(['logout']);
     return Promise.resolve();
   };
 
@@ -51,14 +49,12 @@ describe('AuthService', () => {
       ],
       providers: [
         AuthService,
-        { provide: AngularFireAuth, useValue: angularFireAuthStub },
-        { provide: Router, useValue: { navigate: jest.fn() } }
+        { provide: AngularFireAuth, useValue: angularFireAuthStub }
       ]
     }).compileComponents();
 
     service = TestBed.inject(AuthService);
     afAuth = TestBed.inject(AngularFireAuth);
-    router = TestBed.inject(Router);
   }));
 
   afterEach(() => {
@@ -71,10 +67,7 @@ describe('AuthService', () => {
 
   it('should call login successfully', async () => {
       await service.login(credentialsMock.email, credentialsMock.password);
-      const navigateSpy = jest.spyOn(router, 'navigate');
-
-      expect(navigateSpy).toHaveBeenLastCalledWith(['/']);
-      expect(fakeAuthState.value).toEqual(userMock);
+      expect(fakeAuthState.value).toEqual(resDataMock.user);
   });
 
   it('should fail login', async () => {
@@ -84,17 +77,14 @@ describe('AuthService', () => {
 
   it('should call logout successfully', async () => {
     await service.login(credentialsMock.email, credentialsMock.password);
-    expect(fakeAuthState.value).toEqual(userMock);
+    expect(fakeAuthState.value).toEqual(resDataMock.user);
     await service.logout();
-    const navigateSpy = jest.spyOn(router, 'navigate');
-
-  expect(navigateSpy).toHaveBeenLastCalledWith(['login']);
     expect(fakeAuthState.value).toEqual(null);
   });
 
   it('isLoggedIn should return uid after login', async () => {
     await service.login(credentialsMock.email, credentialsMock.password);
-    expect(fakeAuthState.value.uid).toEqual(userMock.uid);
+    expect(fakeAuthState.value.uid).toEqual(resDataMock.user.uid);
   });
 
   it('isLoggedIn should return nul, user is not logged in', () => {
