@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { BrowserModule } from '@angular/platform-browser';
 import { EmployeeAppFeatureAuthModule } from '@dashasorg/employee-app/feature-auth';
 import { environment } from '../environments/environment';
@@ -17,7 +16,6 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFirestoreModule,
     EmployeeAppFeatureAuthModule
   ],
   providers: [],
