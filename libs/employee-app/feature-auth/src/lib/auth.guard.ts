@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { AuthService } from '@dashasorg/auth';
 import { Observable } from 'rxjs';
+import { take, tap } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
@@ -11,10 +12,9 @@ export class AuthGuard implements CanActivate {
   ) {}
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if (this.authService.isLoggedIn === true) {
-      return true;
-    } else {
-      this.router.navigate(['login']);
-    }
+    return this.authService.isLoggedIn().pipe(
+      take(1),
+      tap((userIsLoggedIn) => userIsLoggedIn ? null : this.router.navigate(['login']))
+    );
   }
 }
