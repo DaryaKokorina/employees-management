@@ -1,7 +1,7 @@
 import { async, TestBed } from '@angular/core/testing';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { RouterTestingModule } from '@angular/router/testing';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { AuthService } from './auth.service';
 
 describe('AuthService', () => {
@@ -22,18 +22,16 @@ describe('AuthService', () => {
 
   const fakeAuthState = new BehaviorSubject(null);
 
-  const fakeLoginHandler = (email: string, password: string): Promise<any> => {
+  const fakeLoginHandler = (email: string, password: string): Observable<any> => {
     fakeAuthState.next(resDataMock.user);
-    return new Promise((resolve, reject) => {
-      email === credentialsMock.email ?
-        resolve(resDataMock) :
-        reject(new Error('Error occurs during user login!'));
-    });
-  };
+    return email === credentialsMock.email ?
+        of(resDataMock) :
+        of(new Error('Error occurs during user login!'));
+    };
 
-  const fakeLogoutHandler = (): Promise<any> => {
+  const fakeLogoutHandler = (): Observable<void> => {
     fakeAuthState.next(null);
-    return Promise.resolve();
+    return of();
   };
 
   const angularFireAuthStub = {

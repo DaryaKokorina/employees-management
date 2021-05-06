@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/auth";
 import { Router } from "@angular/router";
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { from, Observable, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -13,12 +13,11 @@ export class AuthService {
   ) {}
 
   // Sign in with email/password
-  login(email: string, password: string): Promise<string | void> {
-    return this.afAuth.signInWithEmailAndPassword(email, password)
-      .then((res) => res.user.uid)
-      .catch((err) => {
-        console.log('Something went wrong: ', err.message);
-      });
+  login(email: string, password: string): Observable<string | void> {
+    return from(this.afAuth.signInWithEmailAndPassword(email, password)).pipe(
+      map((res) => res.user.uid),
+      catchError((err) => of(`login is unsuccessful: ', ${err}`))
+    );
   }
 
   // Returns true when user is looged in
@@ -28,7 +27,7 @@ export class AuthService {
     );
   }
 
-  logout(): Promise<void> {
-    return this.afAuth.signOut();
+  logout(): Observable<void> {
+    return from(this.afAuth.signOut());
   }
 }

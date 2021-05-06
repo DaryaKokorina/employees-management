@@ -5,6 +5,7 @@ import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AuthService } from '@dashasorg/auth';
 import { AuthFormContainerComponent } from '@dashasorg/employee-app/ui-auth';
+import { of } from 'rxjs';
 import { LoginComponent } from './login.component';
 
 describe('LoginComponent', () => {
@@ -26,7 +27,7 @@ describe('LoginComponent', () => {
       imports: [FormsModule],
       declarations: [LoginComponent, AuthFormContainerComponent],
       providers: [
-        { provide: AuthService, useValue: { login: jest.fn(() => Promise.resolve(userUid)) }},
+        { provide: AuthService, useValue: { login: jest.fn(() => of(userUid)) }},
         { provide: Router, useValue: { navigate: jest.fn() } }
       ]
     }).compileComponents()
