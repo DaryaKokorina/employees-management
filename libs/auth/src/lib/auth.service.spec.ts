@@ -65,7 +65,7 @@ describe('AuthService', () => {
       expect(service).toBeTruthy();
   });
 
-  it('should call login successfully', async () => {
+  it('should call login successfully when backend return user data', async () => {
       await service.login(credentialsMock.email, credentialsMock.password);
       expect(fakeAuthState.value).toEqual(resDataMock.user);
   });
