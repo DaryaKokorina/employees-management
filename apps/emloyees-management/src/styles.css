@@ -17,3 +17,9 @@ p,
 button {
   font-family: Roboto, sans-serif;
 }
+
+/* TODO: Temporary, should be deleted */
+a {
+  cursor: pointer;
+  text-decoration: underline;
+}
