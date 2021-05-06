@@ -70,7 +70,7 @@ describe('AuthService', () => {
       expect(fakeAuthState.value).toEqual(resDataMock.user);
   });
 
-  it('should fail login', async () => {
+  it('should fail login when backend doesn\'t return user data', async () => {
     await service.login('some other email', credentialsMock.password);
     expect(service.login).toThrowError();
   });
