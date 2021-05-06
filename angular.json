@@ -320,6 +320,56 @@
           }
         }
       }
+    },
+    "employee-management-ui-error-message": {
+      "projectType": "library",
+      "root": "libs/employee-management/ui-error-message",
+      "sourceRoot": "libs/employee-management/ui-error-message/src",
+      "prefix": "dashasorg",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/employee-management/ui-error-message/src/**/*.ts",
+              "libs/employee-management/ui-error-message/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/employee-management/ui-error-message"],
+          "options": {
+            "jestConfig": "libs/employee-management/ui-error-message/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "employee-app-ui-error-message": {
+      "projectType": "library",
+      "root": "libs/employee-app/ui-error-message",
+      "sourceRoot": "libs/employee-app/ui-error-message/src",
+      "prefix": "dashasorg",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/employee-app/ui-error-message/src/**/*.ts",
+              "libs/employee-app/ui-error-message/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/employee-app/ui-error-message"],
+          "options": {
+            "jestConfig": "libs/employee-app/ui-error-message/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

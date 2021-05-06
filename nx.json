@@ -23,6 +23,8 @@
     "employee-app-models": { "tags": [] },
     "employee-app-feature-employees-list": { "tags": [] },
     "employee-app-ui-employees-list": { "tags": [] },
-    "auth": { "tags": [] }
+    "auth": { "tags": [] },
+    "employee-management-ui-error-message": { "tags": [] },
+    "employee-app-ui-error-message": { "tags": [] }
   }
 }

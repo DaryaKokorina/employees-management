@@ -33,7 +33,13 @@
       "@dashasorg/employee-app/ui-employees-list": [
         "libs/employee-app/ui-employees-list/src/index.ts"
       ],
-      "@dashasorg/auth": ["libs/auth/src/index.ts"]
+      "@dashasorg/auth": ["libs/auth/src/index.ts"],
+      "@dashasorg/employee-management/ui-error-message": [
+        "libs/employee-management/ui-error-message/src/index.ts"
+      ],
+      "@dashasorg/employee-app/ui-error-message": [
+        "libs/employee-app/ui-error-message/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
