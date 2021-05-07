@@ -24,7 +24,7 @@ export class AuthService {
   // Returns true when user is looged in
   isLoggedIn(): Observable<boolean> {
     return this.afAuth.authState.pipe(
-      map((res) => !!res.uid)
+      map((res) => !!res?.uid)
     );
   }
 

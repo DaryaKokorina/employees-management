@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from '@dashasorg/employee-app/feature-auth';
+import { AuthGuard } from './auth.guard';
 import { HomeComponent } from './home/home.component';
 
 
@@ -20,6 +20,10 @@ const routes: Routes = [
         loadChildren: () => import('@dashasorg/employee-app/feature-employees-shell').then(m => m.EmployeeAppFeatureEmployeesShellModule)
       }
     ]
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('@dashasorg/employee-app/feature-auth').then(m => m.EmployeeAppFeatureAuthModule)
   }
 ];
 
