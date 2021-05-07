@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/auth";
 import { Router } from "@angular/router";
-import { from, Observable, of } from 'rxjs';
+import { handleError } from '@dashasorg/utils';
+import { from, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
@@ -16,7 +17,7 @@ export class AuthService {
   login(email: string, password: string): Observable<string | void> {
     return from(this.afAuth.signInWithEmailAndPassword(email, password)).pipe(
       map((res) => res.user.uid),
-      catchError((err) => of(`login is unsuccessful: ', ${err}`))
+      catchError(handleError)
     );
   }
 
