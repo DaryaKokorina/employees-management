@@ -3,12 +3,25 @@
     <div class="emp-auth-form-item">
       <label for="email">Email</label>
       <input
-        type="text"
+        type="email"
         placeholder="{{ formControlPlaceholder }}"
         [(ngModel)]="loginData.email"
         id="email"
         name="email"
+        required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        #email="ngModel"
       />
+      <div [hidden]="email.valid || email.pristine">
+        <emp-error-message
+          *ngIf="email.errors?.required"
+          message="Email is a required field"
+        ></emp-error-message>
+        <emp-error-message
+          *ngIf="email.errors?.pattern"
+          message="It is not a valid email"
+        ></emp-error-message>
+      </div>
     </div>
     <div class="emp-auth-form-item">
       <label for="password">Password</label>
@@ -18,7 +31,15 @@
         placeholder="{{ formControlPlaceholder }}"
         [(ngModel)]="loginData.password"
         name="password"
+        required
+        #password="ngModel"
       />
+      <div [hidden]="password.valid || password.pristine">
+        <emp-error-message
+          *ngIf="password.errors?.required"
+          message="Password is a required field"
+        ></emp-error-message>
+      </div>
     </div>
     <div class="emp-auth-form-item">
       <button type="submit">Login</button>
