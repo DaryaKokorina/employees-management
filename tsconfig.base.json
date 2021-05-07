@@ -39,7 +39,8 @@
       ],
       "@dashasorg/employee-app/ui-error-message": [
         "libs/employee-app/ui-error-message/src/index.ts"
-      ]
+      ],
+      "@dashasorg/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

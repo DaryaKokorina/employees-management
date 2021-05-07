@@ -25,6 +25,7 @@
     "employee-app-ui-employees-list": { "tags": [] },
     "auth": { "tags": [] },
     "employee-management-ui-error-message": { "tags": [] },
-    "employee-app-ui-error-message": { "tags": [] }
+    "employee-app-ui-error-message": { "tags": [] },
+    "utils": { "tags": [] }
   }
 }
