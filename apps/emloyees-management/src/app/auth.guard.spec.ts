@@ -10,8 +10,6 @@ describe('AuthGuard', () => {
   let authGuard: AuthGuard;
   let router: Router;
   let authService: AuthService;
-  const routeMock: any = { snapshot: {}};
-  const routeStateMock: any = { snapshot: {}, url: '/login'};
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -29,7 +27,7 @@ describe('AuthGuard', () => {
 
   it('be able to push route when user is logged in', done => {
     authService.isLoggedIn = jest.fn(() => of(true));
-    authGuard.canActivate(routeMock, routeStateMock).subscribe((res) => {
+    authGuard.canActivate().subscribe((res) => {
       expect(res).toBeTruthy();
       done();
     });
@@ -38,7 +36,7 @@ describe('AuthGuard', () => {
   it('not be able to go to the home page when user is not logged in', done => {
     authService.isLoggedIn = jest.fn(() => of(false));
     const routerSpy = jest.spyOn(router, 'navigate');
-    authGuard.canActivate(routeMock, routeStateMock).subscribe((res) => {
+    authGuard.canActivate().subscribe((res) => {
       expect(res).toBeFalsy();
       expect(routerSpy).toHaveBeenCalledWith(['login']);
       done();

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 import { AuthService } from '@dashasorg/auth';
 import { Observable } from 'rxjs';
 import { take, tap } from 'rxjs/operators';
@@ -11,7 +11,7 @@ export class AuthGuard implements CanActivate {
     private router: Router
   ) {}
 
-  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+  canActivate(): Observable<boolean> {
     return this.authService.isLoggedIn().pipe(
       take(1),
       tap((userIsLoggedIn) => userIsLoggedIn ? null : this.router.navigate(['login']))
