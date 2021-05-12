@@ -24,7 +24,7 @@ describe('AuthService', () => {
 
   const fakeLoginHandler = (email: string, password: string): Observable<any> => {
     fakeAuthState.next(resDataMock.user);
-    return email === credentialsMock.email ?
+    return email === credentialsMock.email && password === credentialsMock.password ?
         of(resDataMock) :
         of(new Error('Error occurs during user login!'));
     };
