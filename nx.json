@@ -1,30 +1,30 @@
 {
   "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     ".eslintrc.json": "*"
   },
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "npmScope": "dashasorg",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "projects": {
-    "emloyees-management": {
-      "tags": []
-    },
+    "emloyees-management": { "tags": [] },
     "emloyees-management-e2e": {
       "tags": [],
       "implicitDependencies": ["emloyees-management"]
-    }
+    },
+    "employee-app-feature-employees-shell": { "tags": [] },
+    "employee-app-feature-auth": { "tags": [] },
+    "employee-app-ui-auth": { "tags": [] },
+    "employee-app-models": { "tags": [] },
+    "employee-app-feature-employees-list": { "tags": [] },
+    "employee-app-ui-employees-list": { "tags": [] },
+    "auth": { "tags": [] },
+    "employee-app-ui-error-message": { "tags": [] },
+    "utils": { "tags": [] }
   }
 }

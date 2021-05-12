@@ -1,0 +1,15 @@
+:host {
+  --error-message-color: var(--crimson-color);
+}
+
+.emp-error-message-container {
+  display: flex;
+  align-items: center;
+}
+
+.emp-error-message-container p {
+  margin-left: 5px;
+
+  font-size: 0.6875rem;
+  color: var(--error-message-color);
+}

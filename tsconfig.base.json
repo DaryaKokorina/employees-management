@@ -14,7 +14,31 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@dashasorg/employee-app/feature-employees-shell": [
+        "libs/employee-app/feature-employees-shell/src/index.ts"
+      ],
+      "@dashasorg/employee-app/feature-auth": [
+        "libs/employee-app/feature-auth/src/index.ts"
+      ],
+      "@dashasorg/employee-app/ui-auth": [
+        "libs/employee-app/ui-auth/src/index.ts"
+      ],
+      "@dashasorg/employee-app/models": [
+        "libs/employee-app/models/src/index.ts"
+      ],
+      "@dashasorg/employee-app/feature-employees-list": [
+        "libs/employee-app/feature-employees-list/src/index.ts"
+      ],
+      "@dashasorg/employee-app/ui-employees-list": [
+        "libs/employee-app/ui-employees-list/src/index.ts"
+      ],
+      "@dashasorg/auth": ["libs/auth/src/index.ts"],
+      "@dashasorg/employee-app/ui-error-message": [
+        "libs/employee-app/ui-error-message/src/index.ts"
+      ],
+      "@dashasorg/utils": ["libs/utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

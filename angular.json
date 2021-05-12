@@ -145,6 +145,231 @@
           }
         }
       }
+    },
+    "employee-app-feature-employees-shell": {
+      "projectType": "library",
+      "root": "libs/employee-app/feature-employees-shell",
+      "sourceRoot": "libs/employee-app/feature-employees-shell/src",
+      "prefix": "dashasorg",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/employee-app/feature-employees-shell/src/**/*.ts",
+              "libs/employee-app/feature-employees-shell/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/employee-app/feature-employees-shell"],
+          "options": {
+            "jestConfig": "libs/employee-app/feature-employees-shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "employee-app-feature-auth": {
+      "projectType": "library",
+      "root": "libs/employee-app/feature-auth",
+      "sourceRoot": "libs/employee-app/feature-auth/src",
+      "prefix": "dashasorg",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/employee-app/feature-auth/src/**/*.ts",
+              "libs/employee-app/feature-auth/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/employee-app/feature-auth"],
+          "options": {
+            "jestConfig": "libs/employee-app/feature-auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "employee-app-ui-auth": {
+      "projectType": "library",
+      "root": "libs/employee-app/ui-auth",
+      "sourceRoot": "libs/employee-app/ui-auth/src",
+      "prefix": "dashasorg",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/employee-app/ui-auth/src/**/*.ts",
+              "libs/employee-app/ui-auth/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/employee-app/ui-auth"],
+          "options": {
+            "jestConfig": "libs/employee-app/ui-auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "employee-app-models": {
+      "projectType": "library",
+      "root": "libs/employee-app/models",
+      "sourceRoot": "libs/employee-app/models/src",
+      "prefix": "dashasorg",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/employee-app/models/src/**/*.ts",
+              "libs/employee-app/models/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/employee-app/models"],
+          "options": {
+            "jestConfig": "libs/employee-app/models/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "employee-app-feature-employees-list": {
+      "projectType": "library",
+      "root": "libs/employee-app/feature-employees-list",
+      "sourceRoot": "libs/employee-app/feature-employees-list/src",
+      "prefix": "dashasorg",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/employee-app/feature-employees-list/src/**/*.ts",
+              "libs/employee-app/feature-employees-list/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/employee-app/feature-employees-list"],
+          "options": {
+            "jestConfig": "libs/employee-app/feature-employees-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "employee-app-ui-employees-list": {
+      "projectType": "library",
+      "root": "libs/employee-app/ui-employees-list",
+      "sourceRoot": "libs/employee-app/ui-employees-list/src",
+      "prefix": "dashasorg",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/employee-app/ui-employees-list/src/**/*.ts",
+              "libs/employee-app/ui-employees-list/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/employee-app/ui-employees-list"],
+          "options": {
+            "jestConfig": "libs/employee-app/ui-employees-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "auth": {
+      "projectType": "library",
+      "root": "libs/auth",
+      "sourceRoot": "libs/auth/src",
+      "prefix": "dashasorg",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/auth/src/**/*.ts",
+              "libs/auth/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/auth"],
+          "options": {
+            "jestConfig": "libs/auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "employee-app-ui-error-message": {
+      "projectType": "library",
+      "root": "libs/employee-app/ui-error-message",
+      "sourceRoot": "libs/employee-app/ui-error-message/src",
+      "prefix": "dashasorg",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/employee-app/ui-error-message/src/**/*.ts",
+              "libs/employee-app/ui-error-message/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/employee-app/ui-error-message"],
+          "options": {
+            "jestConfig": "libs/employee-app/ui-error-message/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "utils": {
+      "projectType": "library",
+      "root": "libs/utils",
+      "sourceRoot": "libs/utils/src",
+      "prefix": "dashasorg",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/utils/src/**/*.ts",
+              "libs/utils/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/utils"],
+          "options": {
+            "jestConfig": "libs/utils/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
