@@ -6,7 +6,6 @@ import { AuthService } from './auth.service';
 
 describe('AuthService', () => {
   let service: AuthService;
-  let afAuth: AngularFireAuth;
 
   const credentialsMock = {
     email: 'abc@123.com',
@@ -22,7 +21,7 @@ describe('AuthService', () => {
 
   const fakeAuthState = new BehaviorSubject(null);
 
-  const fakeLoginHandler = (email: string, password: string): Observable<any> => {
+  const fakeLoginHandler = (email: string, password: string): Observable<{ user: { uid: string; email: string }} | Error> => {
     fakeAuthState.next(resDataMock.user);
     return email === credentialsMock.email && password === credentialsMock.password ?
         of(resDataMock) :
@@ -52,7 +51,6 @@ describe('AuthService', () => {
     }).compileComponents();
 
     service = TestBed.inject(AuthService);
-    afAuth = TestBed.inject(AngularFireAuth);
   }));
 
   afterEach(() => {
