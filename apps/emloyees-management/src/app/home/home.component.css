@@ -1,0 +1,20 @@
+:host {
+  --app-title-color: var(--alizarin-crimson-color);
+}
+
+.home-container {
+  display: grid;
+  grid-template-columns: 270px auto;
+  grid-template-rows: 70px auto;
+}
+
+.app-title {
+  font-size: 0.875rem;
+  color: var(--app-title-color);
+}
+
+.app-title-container {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}

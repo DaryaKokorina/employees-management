@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
 @import '~normalize.css';
 @import './styles/palette.css';
 
@@ -8,6 +9,7 @@ html {
 }
 
 h1 {
+  font-family: Ubuntu, sans-serif;
   margin-block-start: 0;
   margin-block-end: 0;
 }
